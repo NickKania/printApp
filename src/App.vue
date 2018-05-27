@@ -1,6 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <nav>
+      <router-link :to="{ name: '', params: {} }">Home</router-link>
+      <router-link :to="{ name: 'Printers', params: {} }">Printers</router-link>
+      <router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link>
+      <router-link :to="{ name: 'Report', params: {} }">Report</router-link>
+      <router-link :to="{ name: 'Admin', params: {} }">Admin</router-link>
+    </nav>
+    <br/>
+    <img src="./assets/logo.png" width="200">
     <router-view/>
   </div>
 </template>
