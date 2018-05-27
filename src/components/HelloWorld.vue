@@ -1,8 +1,11 @@
 <template>
-  <div class="hello">
+  <div class="center-align">
+        <img src="../assets/logo.png" class="center"/>
     <h1>{{ msg }}</h1>
-  <PrintQueue />
-  <Module2 />
+    <div class="row">
+  <PrintQueue class="col s6"/>
+  <Module2 class="col s6"/>
+</div>
 
   </div>
 </template>
@@ -42,4 +45,11 @@ li {
 a {
   color: #42b983;
 }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px
+}
+
 </style>

@@ -1,31 +1,68 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link :to="{ name: '', params: {} }">Home</router-link>
-      <router-link :to="{ name: 'Printers', params: {} }">Printers</router-link>
-      <router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link>
-      <router-link :to="{ name: 'Report', params: {} }">Report</router-link>
-      <router-link :to="{ name: 'Admin', params: {} }">Admin</router-link>
-    </nav>
-    <br/>
-    <img src="./assets/logo.png" width="200">
+  <div>
+    <div>
+  <nav src="/assets/css/materialize.min.css" class="nav-wrapper blue darken-2">
+    <a href="#!" class="brand-logo hide-on-large-only">Onshape Print</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-moblie" class="left hide-on-med-and-down sidenav-trigger">
+        <li><router-link :to="{ name: '', params: {} }">Home</router-link></li>
+        <li><router-link :to="{ name: 'Printers', params: {} }">Printers</router-link></li>
+        <li><router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+        <li><router-link :to="{ name: 'Report', params: {} }">Report</router-link></li>
+        <li><router-link :to="{ name: 'Admin', params: {} }">Admin</router-link></li>
+      </ul>
+  </nav>
+</div>
+  <ul class="sidenav" id="mobile-demo">
+    <li><router-link :to="{ name: '', params: {} }">Home</router-link></li>
+    <li><router-link :to="{ name: 'Printers', params: {} }">Printers</router-link></li>
+    <li><router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link></li>
+    <li><router-link :to="{ name: 'Report', params: {} }">Report</router-link></li>
+    <li><router-link :to="{ name: 'Admin', params: {} }">Admin</router-link></li>
+  </ul>
+
+
+  <br/>
     <router-view/>
   </div>
 </template>
 
 <script>
+
+// import './assets/css/materialize.css'
+// import './assets/css/materialize.min.css'
+
 export default {
   name: 'App'
 }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.sidenav');
+//   var instances = M.Sidenav.init(elems, options);
+// });
+
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#nav-mobile {
+  font-family: 'Flama-Medium', Fallback, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
+
+div {
+font-family: 'Flama-Medium', Fallback, sans-serif;
+font-size-adjust: 1;
+}
+
+div.navbar{
+  font-size: 20px;
+}
+
+
 </style>

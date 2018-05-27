@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './assets/css/materialize.css'
+import './assets/css/materialize.min.css'
+import './assets/fonts/Flama Bold.otf'
 
 Vue.config.productionTip = false
 
