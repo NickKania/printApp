@@ -6,7 +6,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-moblie" class="left hide-on-med-and-down sidenav-trigger">
         <li><router-link :to="{ name: 'Home', params: {} }">Home</router-link></li>
-        <li><router-link :to="{ name: 'Printers', params: {} }">Printers</router-link></li>
+        <li><router-link :to="{ name: 'Machines', params: {} }">Machines</router-link></li>
         <li><router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link></li>
         </ul>
         <ul class="right hide-on-med-and-down">

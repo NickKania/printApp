@@ -6,6 +6,10 @@ import router from './router'
 import './assets/css/materialize.css'
 import './assets/js/materialize.js'
 import './assets/fonts/Flama Bold.otf'
+import VueYouTubeEmbed from 'vue-youtube-embed'
+require('./assets/logo.png')
+
+Vue.use(VueYouTubeEmbed)
 
 Vue.config.productionTip = false
 

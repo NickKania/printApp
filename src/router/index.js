@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Printers from '@/components/Printers'
+import Machines from '@/components/Machines'
 import Admin from '@/components/Admin'
 import Report from '@/components/Report'
 import Uploads from '@/components/Uploads'
@@ -16,9 +16,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/printers',
-      name: 'Printers',
-      component: Printers
+      path: '/machines',
+      name: 'Machines',
+      component: Machines
     },
     {
       path: '/admin',

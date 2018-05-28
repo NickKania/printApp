@@ -17,7 +17,7 @@
             <option value="3">Form 2</option>
             <option value="3">Carvey</option>
           </select>
-          <label>Materialize Select</label>
+          <label></label>
         </div>
       </div>
       <div class="row">

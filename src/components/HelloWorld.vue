@@ -1,6 +1,6 @@
 <template>
   <div class="center-align">
-        <img src="../assets/logo.png" class="center"/>
+        <img src="../assets/logo.png" class="center" width="300"/>
     <h1 class="hide-on-med-and-down">{{ msg }}</h1>
     <div class="row">
   <PrinterQueue class="col s6 "/>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Admin from "./Admin"
 import PrinterQueue from "./PrinterQueue"
 import PrinterStatus from "./PrinterStatus"
 
@@ -44,12 +43,6 @@ li {
 }
 a {
   color: #42b983;
-}
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px
 }
 
 div {
