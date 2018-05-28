@@ -1,5 +1,5 @@
 <template lang="html">
-  <h1> Module 2 </h1>
+  <h1>Status</h1>
 
 </template>
 

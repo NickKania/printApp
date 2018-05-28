@@ -1,10 +1,10 @@
 <template>
   <div class="center-align">
         <img src="../assets/logo.png" class="center"/>
-    <h1>{{ msg }}</h1>
+    <h1 class="hide-on-med-and-down">{{ msg }}</h1>
     <div class="row">
-  <PrintQueue class="col s6"/>
-  <Module2 class="col s6"/>
+  <PrinterQueue class="col s6 "/>
+  <PrinterStatus class="col s6"/>
 </div>
 
   </div>
@@ -12,18 +12,18 @@
 
 <script>
 import Admin from "./Admin"
-import PrintQueue from "./PrintQueue"
-import Module2 from "./Module2"
+import PrinterQueue from "./PrinterQueue"
+import PrinterStatus from "./PrinterStatus"
 
 export default {
   name: 'HelloWorld',
   components: {
-    PrintQueue,
-    Module2
+    PrinterQueue,
+    PrinterStatus
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Onshape print'
     }
   }
 }
@@ -50,6 +50,15 @@ a {
     margin-left: auto;
     margin-right: auto;
     width: 200px
+}
+
+div {
+font-family: 'Flama-Medium', Fallback, sans-serif;
+font-size-adjust: 1;
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 50px;
+padding-left: 20px;
 }
 
 </style>

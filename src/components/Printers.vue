@@ -1,6 +1,7 @@
 <template lang="html">
-  <h1>Printer</h1>
-
+  <div>
+    <h1>Printers</h1>
+  </div>
 </template>
 
 <script>
