@@ -6,30 +6,31 @@
       <tr>
         <th data-field="id">Printer</th>
         <th data-field="text">Status</th>
+        <th data-field="button"></th>
       </tr>
     </thead>
-
     <tbody>
-      <tr>
+      <!-- <tr>
         <td>MakerBot <span class="badge green white-text">Online</span></td>
         <td><a href="/" class="waves-effect waves-light btn blue darken-2">Start print</a></td>
-      </tr>
-      <tr>
-        <td>Form 2 <span class="badge green white-text">Online</span></td>
-        <td><a href="/" class="waves-effect waves-light btn blue darken-2">Start print</a></td>
-      </tr>
-      <tr>
-        <td>ZeePro Zim <span class="badge red white-text">Offline</span></td>
-        <td><a href="/" class="waves-effect waves-light btn blue darken-2 disabled">Start print</a></td>
-      </tr>
+      </tr> -->
+      <tr v-for="printer in printerList" :key="printer.name">
+      <td>{{printer.name}}</td>
+      <!--<td v-if="printer.isOnline == true"> <span class="badge green white-text">Online</span></td>-->
+      <!--<td v-else><span class="badge red white-text">Offline</span></td>-->
+      <td><a href="/" class="waves-effect waves-light btn blue darken-2">Start print</a></td>
+</tr>
     </tbody>
   </table>
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+    components: {
+        printers
+    }
 }
 </script>
 
