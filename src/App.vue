@@ -29,6 +29,41 @@ import './assets/css/materialize.css'
 import './assets/js/materialize.js'
 // import './assets/css/materialize.min.css'
 
+var name,displayName,inUse,isOnline;
+var printQueue = new Queue();
+
+function printer(name, displayName) {
+  this.id = name;
+  displayName = this.displayName
+  inUse = false;
+  isOnline = false;
+  printQueue;
+}
+var makerBot = new printer(makerBot, "Makerbot");
+var formLabs = new printer(formLabs, "Formlabs");
+var printerList = [makerBot,formLabs];
+
+function Queue(){
+   this.queue = [];
+}
+
+Queue.prototype.enqueue = function(item){
+   this.queue.push(item);
+}
+
+Queue.prototype.dequeue = function(){
+   return this.queue.shift();
+}
+
+Queue.prototype.size = function(){
+   return this.queue.length;
+}
+
+Queue.prototype.peak = function(){
+   return (this.queue[0] !== null) ? this.queue[0] : null;
+}
+
+
 export default {
   name: 'App'
 }

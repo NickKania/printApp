@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home'
 import Machines from '@/components/Machines'
 import Admin from '@/components/Admin'
 import Report from '@/components/Report'
@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: HelloWorld
+      component: Home
     },
     {
       path: '/machines',
