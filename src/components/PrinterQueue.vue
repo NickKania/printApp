@@ -11,26 +11,14 @@
     </thead>
 
     <tbody>
-      <tr>
-        <td>MakerBot</td>
-        <td>Eclair</td>
-        <td>3:24 remaining</td>
-      </tr>
-      <tr>
-        <td>Form 2</td>
-        <td>Jellybean</td>
-        <td>12:47 remaining</td>
-      </tr>
-      <tr>
-        <td>ZeePro Zim</td>
-        <td>Lollipop</td>
-        <td>1:30 remaining</td>
-      </tr>
-      <tr>
-        <td>MakerBot</td>
-        <td>Donut</td>
-        <td>Queued</td>
-      </tr>
+      <div v-for="job in printer.printQueue" :key="job.priority">
+        <tr>
+          <td>{{printer.displayName}}</td>
+          <td>{{job.name}}</td>
+          <td>{{job.creator}}</td>
+        </tr>
+
+      </div>
     </tbody>
   </table>
   </div>

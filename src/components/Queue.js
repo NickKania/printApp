@@ -1,3 +1,4 @@
+import PrintJob from './PrintJob.js'
 export default class Queue {
   constructor() {
     this.queue = [];
@@ -8,14 +9,22 @@ export default class Queue {
   }
 
   dequeue() {
-     return this.queue.shift();
+    for(i = 0; i < this.queue.length; i++) {
+      if(this.queue[i] > 0) {
+        var temp = this.queue[i];
+        this.queue.splice(i,1);
+        return temp;
+      } else {
+        return this.queue.shift();
+      }
+    }
   }
 
   size() {
      return this.queue.length;
   }
 
-  peak() {
+  peek() {
      return (this.queue[0] !== null) ? this.queue[0] : null;
   }
 }
