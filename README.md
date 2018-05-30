@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-![alt text](https://raw.githubusercontent.com/NickKania/printApp/master/src/assets/logo.png =250x)
+![alt text](https://raw.githubusercontent.com/NickKania/printApp/master/src/assets/logo.png)
 
 ## Build Setup
 

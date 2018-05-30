@@ -41,12 +41,14 @@ export default {
   data() {
     return {
       makerBot: new Printer('makerBot', "Makerbot"),
-      formLabs: new Printer('formLabs', "Formlabs")
+      formLabs: new Printer('formLabs', "Formlabs"),
+      lightBox: new Printer('lb', "Lightbox"),
+      
     }
   },
   computed: {
     printerList() {
-      return [this.makerBot, this.formLabs]
+      return [this.makerBot, this.formLabs, this.lightBox]
     }
   }
 }
