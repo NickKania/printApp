@@ -7,6 +7,7 @@ import './assets/css/materialize.css'
 import './assets/js/materialize.js'
 import './assets/fonts/Flama Bold.otf'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+import Store from './store'
 require('./assets/logo.png')
 
 Vue.use(VueYouTubeEmbed)

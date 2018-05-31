@@ -35,22 +35,9 @@
 </template>
 
 <script>
-import Printer from './Printer.js'
-
+import Store from '../store'
 export default {
-  data() {
-    return {
-      makerBot: new Printer('makerBot', "Makerbot"),
-      formLabs: new Printer('formLabs', "Formlabs"),
-      lightBox: new Printer('lb', "Lightbox"),
-      
-    }
-  },
-  computed: {
-    printerList() {
-      return [this.makerBot, this.formLabs, this.lightBox]
-    }
-  }
+
 }
 </script>
 
