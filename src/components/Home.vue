@@ -1,8 +1,7 @@
 <template>
   <div class="center-align">
     <img src="../assets/logo.png" class="center" width="300"/>
-    <h1 class="hide-on-med-and-down">{{ msg }}</h1>
-    <div class="row">
+		<div class="row">
   <PrinterStatus class="col s6"/>
   <PrinterQueue :printer="selectedPrinter" class="col s6"/>
 </div>
@@ -16,14 +15,12 @@ import PrinterStatus from './PrinterStatus';
 import { mapGetters } from 'vuex';
 
 export default {
-  name: 'HelloWorld',
-  components: {
+	components: {
     PrinterQueue,
     PrinterStatus
   },
   data() {
     return {
-      msg: 'Welcome to Onshape print'
     };
   },
   computed: {

@@ -1,7 +1,6 @@
 <template>
   <div class="center-align">
-    <h1 class="hide-on-med-and-down">{{ msg }}</h1>
-    <div class="row">
+	  <div class="row">
 
 
 </div>

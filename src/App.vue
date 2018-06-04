@@ -16,10 +16,6 @@
   </nav>
   </div>
     <router-view/>
-    <div class="footer grey lighten-1">
-      <br/>
-      <br/>
-    </div>
   </div>
 </template>
 
