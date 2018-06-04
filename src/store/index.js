@@ -1,27 +1,34 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import Printer from './modules/Printer.js'
-import Queue from './modules/Queue.js'
-import PrintJob from './modules/PrintJob.js'
-Vue.use(Vuex)
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-export default new Vuex.Store({
-  modules: {
-    Printer,
-    PrintJob,
-    Queue
-  },
-  data() {
-      return {
-        makerBot: new Printer('makerBot', "Makerbot"),
-        formLabs: new Printer('formLabs', "Formlabs"),
-        lightBox: new Printer('lb', "Lightbox"),
+import Printer from '../classes/Printer.js';
+import mutations from './mutations';
 
-      }
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
+    printerIds: ['makerBot', 'formLabs', 'lightBox'],
+    printersById: {
+      makerBot: new Printer('makerBot', 'Makerbot'),
+      formLabs: new Printer('formLabs', 'Formlabs'),
+      lightBox: new Printer('lightBox', 'Lightbox')
     },
-    computed: {
-      printerList() {
-        return [this.makerBot, this.formLabs, this.lightBox]
-      }
+    selectedPrinterId: ''
+  },
+  mutations: {
+    SELECT_PRINTER: (state, printerId) => {
+      state.selectedPrinterId = printerId;
     }
-})
+  },
+  getters: {
+    printerList: state => {
+      return state.printerIds.map(id => state.printersById[id]);
+    },
+    selectedPrinter: (state, getters) => {
+      return state.printersById[state.selectedPrinterId];
+    }
+  }
+});
+
+export default store;
