@@ -18,23 +18,35 @@ export default new Router({
     {
       path: '/machines',
       name: 'Machines',
-      component: Machines
+      component: Machines,
+      meta: {
+        isAdmin: false
+      }
     },
     {
       path: '/admin',
       name: 'Admin',
-      component: Admin
+      component: Admin,
+      meta: {
+        isAdmin: true
+      }
     },
     {
       path: '/report',
       name: 'Report',
-      component: Report
+      component: Report,
+      meta: {
+        isAdmin: false
+      }
     },
     {
       path: '/uploads/:user',
       name: 'Uploads',
       props: true,
-      component: Uploads
+      component: Uploads,
+      meta: {
+        isAdmin: false
+      }
     }
   ]
 })
