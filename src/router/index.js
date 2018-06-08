@@ -47,6 +47,14 @@ export default new Router({
       meta: {
         isAdmin: false
       }
-    }
+    },
+    // {
+    //   path: '/newPrint',
+    //   name: 'NewPrint',
+    //   component: NewPrint,
+    //   meta: {
+    //     isAdmin: false
+    //   }
+    // }
   ]
 })

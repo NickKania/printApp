@@ -1,4 +1,4 @@
-<template lang="html" id="admin">
+<template lang="html" >
 <div>
 	  <h1>Admin</h1>
 

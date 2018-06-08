@@ -17,16 +17,21 @@
         <td v-else><span class="badge red white-text">Offline</span></td>
         <td v-if="printer.currentJob !== null">{{printer.currentJob}}</td>
         <td>
-          <div v-if="pathIsAdmin == false">
+          <div v-if="pathIsAdmin != true">
             <div v-if="printer.isOnline == true">
-              <a href="/" class="waves-effect waves-light btn blue darken-2">Start print</a>
+              <a href="/" class="waves-effect waves-light btn blue darken-2">Add print</a>
             </div>
             <div v-else>
-              <a href="/" class="btn disabled">Start print</a>
+              <a href="/" class="btn disabled">Add print</a>
             </div>
           </div>
           <div v-else>
-
+            <div v-if="printer.isOnline == true">
+              <button v-on:click="bringOnline(printer)" class="waves-effect waves-light btn red">Bring Offline</button>
+            </div>
+            <div v-else>
+              <button v-on:click="bringOffline(printer)" class="waves-effect waves-light btn green">Bring Online</button>
+            </div>
           </div>
         </td>
       </tr>
@@ -53,6 +58,13 @@ export default {
   methods: {
     selectPrinter(id) {
       this.$store.commit('SELECT_PRINTER', id);
+    },
+    bringOnline(printer) {
+      printer.isOnline = true;
+      console.log(printer.isOnline);
+    },
+    bringOffline(printer) {
+      printer.isOnline = false;
     }
   }
 };
