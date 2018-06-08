@@ -5,6 +5,7 @@ import Machines from '@/components/Machines'
 import Admin from '@/components/Admin'
 import Report from '@/components/Report'
 import Uploads from '@/components/Uploads'
+import NewPrint from '@/components/NewPrint'
 
 Vue.use(Router)
 
@@ -48,13 +49,13 @@ export default new Router({
         isAdmin: false
       }
     },
-    // {
-    //   path: '/newPrint',
-    //   name: 'NewPrint',
-    //   component: NewPrint,
-    //   meta: {
-    //     isAdmin: false
-    //   }
-    // }
+    {
+      path: '/newPrint',
+      name: 'NewPrint',
+      component: NewPrint,
+      meta: {
+        isAdmin: false
+      }
+    }
   ]
 })
