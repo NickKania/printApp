@@ -9,8 +9,8 @@
         </div>
         <div class="input-field col s6">
           <select>
-            <!-- <option disabled selected required>Select a machine</option>
-            <option v-for="(printer,index) in printerList" value="{{index}}"> {{printer.displayName}}</option> -->
+            <option value="" disabled selected required>Select a machine</option>
+            <!-- <option v-for="(printer,index) in printerList" v-bind: value="index + 1" :key="printer.id"> {{printer.displayName}}</option> -->
           </select>
 
         </div>

@@ -18,7 +18,7 @@
         <td v-if="printer.currentJob !== null">{{printer.currentJob}}</td>
         <td>
           <div v-if="pathIsAdmin != true">
-            <div v-if="printer.isOnline == true">
+            <div v-if="printer.isOnline">
               <a href="/" class="waves-effect waves-light btn blue darken-2">Add print</a>
             </div>
             <div v-else>
@@ -26,11 +26,11 @@
             </div>
           </div>
           <div v-else>
-            <div v-if="printer.isOnline == true">
-              <button v-on:click="bringOnline(printer)" class="waves-effect waves-light btn red">Bring Offline</button>
+            <div v-if="!printer.isOnline">
+              <button @click="bringOnline(printer)" class="waves-effect waves-light btn green">Bring Online</button>
             </div>
             <div v-else>
-              <button v-on:click="bringOffline(printer)" class="waves-effect waves-light btn green">Bring Online</button>
+              <button @click="bringOffline(printer)" class="waves-effect waves-light btn red">Bring Offline</button>
             </div>
           </div>
         </td>
@@ -61,7 +61,6 @@ export default {
     },
     bringOnline(printer) {
       printer.isOnline = true;
-      console.log(printer.isOnline);
     },
     bringOffline(printer) {
       printer.isOnline = false;

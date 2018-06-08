@@ -27,7 +27,7 @@
         </div>
       </div>
     </form>
-    <button class="btn waves-effect waves-light blue darken-2" type="submit">Submit
+    <button class="btn waves-effect waves-light blue darken-2" type="submit" v-on:click="">Submit
   <i class="material-icons right">send</i>
 </button>
   </div>
@@ -38,7 +38,11 @@
 <script>
 
 export default {
+  methods: {
+    sendEmail() {
 
+    }
+  }
 }
 document.addEventListener('DOMContentLoaded', function() {
    var elems = document.querySelectorAll('select');
@@ -48,10 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
-/* div.container {
-    width: 70%;
-    min-width: 350px;
-} */
+
 
 
 </style>
