@@ -1,11 +1,19 @@
 import printerList
 
 export default class sendEmail {
-  sendEmail(var type, var job, var printerID) {
+  sendEmail(var type, var id, var messageBody) {
+
+    var mailSubject = '';
+    var message = '';
+    var sendTo = '';
 
     if(type == report) {
-      var mailSubject = printer.displayName.concat(" report")
-      var message = printerID
+      mailSubject = id.displayName.concat(" report");
+      message = messageBody;
+      sendTo = nkania@onshape.com;
+    } else {
+      mailSubject += id.name + " is " + id.status;
+      sendTo = id.usrEmail;
     }
 
 

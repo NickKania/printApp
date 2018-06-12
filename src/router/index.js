@@ -6,6 +6,7 @@ import Admin from '@/components/Admin'
 import Report from '@/components/Report'
 import Uploads from '@/components/Uploads'
 import NewPrint from '@/components/NewPrint'
+import SignIn from '@/components/SignIn'
 
 Vue.use(Router)
 
@@ -53,6 +54,14 @@ export default new Router({
       path: '/newPrint',
       name: 'NewPrint',
       component: NewPrint,
+      meta: {
+        isAdmin: false
+      }
+    },
+    {
+      path: '/signIn',
+      name: 'SignIn',
+      component: SignIn,
       meta: {
         isAdmin: false
       }

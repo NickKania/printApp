@@ -10,7 +10,7 @@
         <li><router-link :to="{ name: 'Uploads', params: {} }">My uploads</router-link></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-        <li><router-link :to="{ name: 'NewPrint', params: {} }">New Print</router-link></li>
+        <li><router-link :to="{ name: 'SignIn', params: {} }">Sign In</router-link></li>
         <li><router-link :to="{ name: 'Report', params: {} }">Report</router-link></li>
         <li><router-link :to="{ name: 'Admin', params: {} }">Admin</router-link></li>
       </ul>
