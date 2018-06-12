@@ -27,7 +27,7 @@
         </div>
       </div>
     </form>
-    <button class="btn waves-effect waves-light blue darken-2" type="submit" v-on:click="">Submit
+    <button class="btn waves-effect waves-light blue darken-2" type="submit" v-on:click="sendEmail()">Submit
   <i class="material-icons right">send</i>
 </button>
   </div>
@@ -39,9 +39,6 @@
 
 export default {
   methods: {
-    sendEmail() {
-
-    }
   }
 }
 document.addEventListener('DOMContentLoaded', function() {
