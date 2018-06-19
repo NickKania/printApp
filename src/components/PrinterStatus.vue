@@ -6,12 +6,13 @@
       <tr>
         <th data-field="id">Printer</th>
         <th data-field="text">Status</th>
-        <th data-field="text">Current Job</th>
+        <th data-field="text">Current Print</th>
+        <th data-field="button"></th>
         <th data-field="button"></th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="printer in printerList" @click="selectPrinter(printer.id)" :key="printer.id">
+      <tr v-for="printer in printerList" v-on:click="selectPrinter(printer.id)" :key="printer.id">
         <td>{{printer.displayName}}</td>
         <td v-if="printer.isOnline == true"> <span class="badge green white-text">Online</span></td>
         <td v-else><span class="badge red white-text">Offline</span></td>
@@ -26,12 +27,17 @@
             </div>
           </div>
           <div v-else>
+            <a href="#" class="dropdown-trigger btn" data-target="adminDropdown">Options</a>
+            <ul id="adminDropdown" class="dropdown-content">
             <div v-if="!printer.isOnline">
-              <button @click="bringOnline(printer)" class="waves-effect waves-light btn green">Bring Online</button>
+                <li><a href="#!" v-on:click="bringOnline(printer)">Bring Online</a></li>
             </div>
             <div v-else>
-              <button @click="bringOffline(printer)" class="waves-effect waves-light btn red">Bring Offline</button>
+                <li><a href="#!" v-on:click="bringOffline(printer)">Bring Offline</a></li>
+                <li><a href="#!" v-on:click="cancelCurrentPrint(printer)">Cancel Print</a></li>
+
             </div>
+          </ul>
           </div>
         </td>
       </tr>
@@ -64,13 +70,14 @@ export default {
     },
     bringOffline(printer) {
       printer.isOnline = false;
+    },
+    cancelCurrentPrint(printer) {
+
     }
   }
 };
+
 </script>
 
 <style>
-td.adjusted {
-  padding-right: 50px;
-}
 </style>
