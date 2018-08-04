@@ -4,7 +4,6 @@ import Home from '@/components/Home'
 import Machines from '@/components/Machines'
 import Admin from '@/components/Admin'
 import Report from '@/components/Report'
-import Uploads from '@/components/Uploads'
 import NewPrint from '@/components/NewPrint'
 import SignIn from '@/components/SignIn'
 
@@ -37,15 +36,6 @@ export default new Router({
       path: '/report',
       name: 'Report',
       component: Report,
-      meta: {
-        isAdmin: false
-      }
-    },
-    {
-      path: '/uploads/:user',
-      name: 'Uploads',
-      props: true,
-      component: Uploads,
       meta: {
         isAdmin: false
       }

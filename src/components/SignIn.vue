@@ -1,92 +1,80 @@
 <style lang="css">
 
-.signInForm {
+  .signInForm {
     position: absolute;
     width: 30%;
-    top: 45%;
+    top: 50%;
     left: 45%;
     margin: -100px 0 0 -150px
-}
-.register {
-    position: absolute;
-    right: 0%;
-}
+  }
 
-.heading {
+  .heading {
     text-align: center;
-}
+    font-size: 50px;
+  }
 
 </style>
 
 <template lang="html">
 
-<div>
+  <div>
     <h1 class="heading">Welcome of Onshape Print</h1>
     <form class="signInForm">
-        <div class="form-row">
-            <div class="input-field col s8">
-                <input id="email" type="email" class="validate" v-model="usrEmail">
-                <label for="email">Email</label>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="input-field col s8">
-                <input type="password" id="pswd" class="validate" v-model="userPassword">
-                <label for="pswd">Password</label>
-            </div>
-        </div>
-        <div v-if="toRegisterUser == true">
-            <div class="form-row">
-              <div class="input-field col s8">
-                <input type="password" id="confrimPSWD" class="validate" v-model="usrConfirmPassword">
-                <label for="confrimPSWD">Confirm Password</label>
-              </div>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="row col s8">
-                <button class="btn waves-effect waves-light " type="submit" name="action">{{buttonText}}
-                    <i class="material-icons right">send</i>
-                </button>
-                <a v-on:click="toRegisterUser = !toRegisterUser, registerCheck(userPassword,usrConfirmPassword)"
-                class="waves-effect waves-teal btn-flat register">Register</a>
-            </div>
-        </div>
+      <a v-if="!toRegisterUser">
+        <input type="email" name='userName' v-model="input.username" placeholder="Username"/>
+        <input type="password" name='userPass' v-model="input.password" placeholder="Password"/>
+        <button type="button" class="waves-effect waves-light btn" v-on:click="login()">sign in</button>
+        <button type="button" class="waves-effect waves-light btn" v-on:click="toRegisterUser = true"
+                style="float: right">Create Account
+        </button>
+      </a>
+      <a v-else>
+        <input type="email" name='userName' v-model="input.username" placeholder="Username"/>
+        <input type="password" name='userPass' v-model="input.password" placeholder="Password"/>
+        <input type="password" name='confirmPassword' v-model="input.confirmPassword" placeholder="Confirm Password"/>
+        <button type="button" class="waves-effect waves-light btn" v-on:click="registerCheck()">Register</button>
+      </a>
     </form>
-</div>
+  </div>
 
 </template>
 
 <script>
 
-export default {
-    data: function() {
+  import Accounts from "../classes/accounts";
+
+  export default {
+    data: function () {
       return {
         toRegisterUser: false,
-        usrEmail: '',
-        userPassword: '',
-        usrConfirmPassword: ''
-      }
-    },
-    methods: {
-      registerCheck(pass1, pass2) {
-        if (pass1 != pass2) {
-          M.toast({html: "Passwords do not match", classes: 'rounded'});
-        } else {
-          registerUser(usrEmail, userPassword);
+        input: {
+          username: '',
+          password: '',
+          confirmPassword: ''
         }
       }
     },
-    computed: {
-      buttonText: function() {
-      if (toRegisterUser) {
-        buttonText = "Sign in"
-      } else {
-        buttonText = "Register User"
+    methods: {
+      login() {
+        if (this.username.length > 0 && this.input.password != " ") {
+
+        } else {
+          M.toast({html: 'A username and password is required'})
+        }
+      },
+      registerCheck() {
+        if (this.input.username !== "" && this.input.password !== "") {
+          if (this.input.password === this.input.confirmPassword) {
+            Accounts.registerUser(this.input.username, this.input.password)
+          } else {
+            M.toast({html: "Passwords do not match"});
+          }
+        } else {
+          M.toast({html: "Fields cannot be empty"});
+        }
       }
-      return buttonText;
-    }
+    },
+    computed: {}
   }
-}
 
 </script>

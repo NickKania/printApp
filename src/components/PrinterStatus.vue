@@ -18,7 +18,7 @@
         <td v-else><span class="badge red white-text">Offline</span></td>
         <td v-if="printer.currentJob !== null">{{printer.currentJob}}</td>
         <td>
-          <div v-if="pathIsAdmin != true">
+          <div v-if="!pathIsAdmin">
             <div v-if="printer.isOnline">
               <a href="/" class="waves-effect waves-light btn blue darken-2">Add print</a>
             </div>
@@ -27,19 +27,21 @@
             </div>
           </div>
           <div v-else>
-            <a href="#" class="dropdown-trigger btn" data-target="adminDropdown">Options</a>
+            <a href="#" class="dropdown-trigger btn" data-activates="adminDropdown">Options</a>
             <ul id="adminDropdown" class="dropdown-content">
             <div v-if="!printer.isOnline">
-                <li><a href="#!" v-on:click="bringOnline(printer)">Bring Online</a></li>
+                <li><a href="#!" v-on:click="bringOnline(printer)">Bring {{printer.displayName}} Online</a></li>
             </div>
             <div v-else>
-                <li><a href="#!" v-on:click="bringOffline(printer)">Bring Offline</a></li>
-                <li><a href="#!" v-on:click="cancelCurrentPrint(printer)">Cancel Print</a></li>
-
+                <li><a href="#!" v-on:click="bringOffline(printer)">Bring {{printer.displayName}} Offline</a></li>
+                <li><a href="#!" v-on:click="cancelCurrentPrint(printer)">Cancel current Print</a></li>
             </div>
           </ul>
           </div>
         </td>
+        <td v-if="!pathIsAdmin">
+            <a class="waves-effect waves-teal btn-flat"><i class="material-icons">help_outline</i></a>
+          </td>
       </tr>
     </tbody>
   </table>
