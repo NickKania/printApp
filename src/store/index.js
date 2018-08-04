@@ -28,7 +28,7 @@ const store = new Vuex.Store({
     selectedPrinter: (state, getters) => {
       return state.printersById[state.selectedPrinterId];
     }
-  }
+  },
 });
 
 export default store;

@@ -19,7 +19,7 @@
 
   </div>
 </template>
-
+  
 <script>
 import MakerBot from "./MakerBot"
 import PrinterQueue from "./PrinterQueue"
